@@ -1,0 +1,302 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: #f4f7fb;
+
+    color: #222;
+
+    min-height: 100vh;
+}
+
+
+.container {
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: 40px auto;
+}
+
+
+/* Header */
+
+header {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+header h1 {
+    font-size: 36px;
+
+    margin-bottom: 10px;
+}
+
+
+header p {
+    color: #666;
+
+    font-size: 16px;
+}
+
+
+/* Cards */
+
+.card {
+    background: white;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+.card h2 {
+    margin-bottom: 20px;
+}
+
+
+/* Inputs */
+
+input,
+textarea,
+select {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    margin-bottom: 15px;
+}
+
+
+textarea {
+    resize: vertical;
+}
+
+
+/* Search */
+
+.search-box {
+    display: flex;
+
+    gap: 10px;
+}
+
+
+.search-box input {
+    flex: 1;
+
+    margin-bottom: 0;
+}
+
+
+.search-box select {
+    width: 100px;
+
+    margin-bottom: 0;
+}
+
+
+.search-box button {
+    width: 120px;
+}
+
+
+/* Buttons */
+
+button {
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 11px 18px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+
+.primary-button {
+    background: #2563eb;
+
+    color: white;
+}
+
+
+.primary-button:hover {
+    opacity: 0.9;
+}
+
+
+.view-button {
+    margin-right: 8px;
+
+    background: #e5e7eb;
+}
+
+
+.edit-button {
+    margin-right: 8px;
+
+    background: #facc15;
+}
+
+
+.delete-button {
+    background: #ef4444;
+
+    color: white;
+}
+
+
+/* Messages */
+
+#uploadMessage {
+    margin-top: 12px;
+
+    font-weight: bold;
+}
+
+
+/* Result Card */
+
+.result-card {
+    border: 1px solid #ddd;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    margin-top: 15px;
+}
+
+
+.result-card h3 {
+    margin-bottom: 12px;
+}
+
+
+.result-card p {
+    margin-bottom: 8px;
+
+    color: #555;
+}
+
+
+.result-actions {
+    margin-top: 15px;
+}
+
+
+/* Empty message */
+
+.empty-message {
+    color: #777;
+}
+
+
+/* Modal */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    z-index: 1000;
+
+    left: 0;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+.modal-content {
+    background: white;
+
+    width: 80%;
+
+    max-width: 700px;
+
+    margin: 8% auto;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    position: relative;
+}
+
+
+.close {
+    position: absolute;
+
+    right: 20px;
+
+    top: 12px;
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+
+.document-content {
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: #f4f4f4;
+
+    border-radius: 8px;
+
+    white-space: pre-wrap;
+
+    line-height: 1.6;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .search-box {
+        flex-direction: column;
+    }
+
+
+    .search-box select,
+    .search-box button {
+        width: 100%;
+    }
+
+
+    .modal-content {
+        width: 90%;
+    }
+
+}
