@@ -62,3 +62,78 @@ The main objectives of this project are:
         └────────────┬─────────────┘
                      ▼
                 PostgreSQL
+
+## 1. Problem Statement
+
+When documents are stored in the cloud, searching them can expose sensitive information if document contents and searchable keywords are stored in plaintext.
+
+The goal of this project is to explore a privacy-preserving search mechanism that allows users to search documents using multiple keywords while keeping document contents encrypted in storage.
+
+## 2. How the Project Works
+
+1. **Document upload:** The user submits a document to the application.
+2. **Encryption:** The document content is encrypted before it is stored in the database.
+3. **Keyword indexing:** Searchable keywords are processed using HMAC-SHA256 to create protected keyword indexes.
+4. **Multi-keyword search:** The user searches using multiple keywords with AND or OR matching.
+5. **Ranking:** Matching documents are ordered by relevance.
+6. **Document retrieval:** The application retrieves and decrypts document content when requested.
+
+## 3. Technologies Used
+
+- **Python:** Backend programming.
+- **FastAPI:** REST API development.
+- **PostgreSQL:** Storage for document records and indexes.
+- **SQLAlchemy:** Database interaction.
+- **Fernet encryption:** Protects document content.
+- **HMAC-SHA256:** Creates keyed keyword hashes.
+- **HTML, CSS, and JavaScript:** User interface.
+- **Uvicorn:** Runs the FastAPI application.
+
+## 4. Setup Instructions
+
+### Prerequisites
+
+- Python
+- PostgreSQL
+- Git
+
+### Step 1: Clone the repository
+
+```bash
+git clone https://github.com/vishalyadav07-git/multi-keyword-encrypted-search.git
+cd multi-keyword-encrypted-search
+```
+
+### Step 2: Create a virtual environment
+
+```bash
+python -m venv .venv
+```
+
+Activate it on Windows:
+
+```bash
+.venv\Scripts\activate
+```
+
+### Step 3: Install dependencies
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### Step 4: Configure environment variables
+
+Create a local `.env` file based on `.env.example`. Configure the database URL and any encryption or search keys required by the application.
+
+Never upload your actual `.env` file or secret keys to GitHub.
+
+### Step 5: Run the application
+
+Use the entry point configured in your project. For example, if your FastAPI instance is in `app/main.py`:
+
+```bash
+uvicorn app.main:app --reload
+```
+
+Open `http://127.0.0.1:8000/docs` to explore the API, if Swagger documentation is enabled.
